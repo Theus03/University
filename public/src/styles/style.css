@@ -1,0 +1,713 @@
+/* ========= GLOBAL ========= */
+
+:root {
+    --black: #333;
+    --red: #E03E3E;
+    --gold: #E09F3E;
+    --white: #fff;
+    --blue: #3E7FE0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 93.75%; /* Equivale a 15px */
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+}
+
+.back-login {
+    background-image: url(../img/back-login.jpeg);
+}
+
+.back-list {
+    background-image: url(../img/img-back-list.jpg);
+}
+
+header {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(51, 51, 51, 0.70);
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.img-logo {
+    font-size: 4rem;
+}
+
+.text-logo {
+    font-size: 2rem;
+    color: var(--white);
+    font-weight: 900;
+}
+
+.result-overlay {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    visibility: hidden;
+    clip: rect(0, 0, 0, 0);
+}
+
+/* ========= LOGIN ========= */
+
+.container-main {
+    background: #3333331e;
+    position: fixed;
+    width: 40%;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.container-login {
+    overflow: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-login {
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.input-group {
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-email {
+    position: absolute;
+    margin-right: 20rem;
+    width: 2rem;
+}
+
+.input-group input {
+    background: none;
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 18%;
+    border: solid 2px var(--red);
+    color: var(--black);
+    font-weight: 700;
+    transition: 0.4s
+}
+
+.input-group input:focus {
+    box-shadow: rgba(255, 52, 52, 0.45) 0px 25px 20px -20px;
+}
+
+.input-group input::placeholder {
+    color: var(--red);
+}
+
+.button-login {
+    background: var(--gold);
+    margin-top: 8rem;
+    padding: 1.3rem;
+    width: 25rem;
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.button-login:hover {
+    background: #f3a531
+}
+
+
+/* ========= HOME ========= */
+.sliders img{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: ease 0.8s;
+    z-index: 0;
+}
+
+.sliders img.selected {
+    opacity: 1;
+}
+
+main {
+    position: absolute;
+    display: flex;
+    overflow: auto;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.action-buttons {
+    margin-top: 5rem;
+    overflow: auto;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttons {
+    text-decoration: none;
+    display: inline;
+    padding: 1.3rem;
+    width: 20rem;
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: 0.4s
+}
+
+.buttons:hover {
+    opacity: 95%;
+    padding-left: 2rem;
+}
+
+.buttons.register {
+    background-color: var(--gold);
+}
+
+.buttons.list {
+    background-color: var(--blue);
+}
+
+.buttons.exit {
+    background-color: var(--red);
+}
+
+/* ========= REGISTER ========= */
+.back-box {
+    position: absolute;
+    background-color: var(--gold);
+    height: 100%;
+    right: 0;
+    width: 65%;
+}
+
+.container-form {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.container-form form {
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    height: 90%
+}
+
+.header-form {
+    width: 70%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-form a{
+    color: var(--white);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.title-form {
+    color: var(--white);
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.group-input {
+    width: 75%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content:center;
+}
+
+.group-one, .group-two {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem
+}
+
+.group-input input {
+    background: none;
+    margin-top: 1rem;
+    width: 25rem;
+    padding: 1rem;
+    border-radius: 10px;
+    outline: none;
+    border: solid 2px var(--white);
+    color: var(--white);
+    font-weight: 400;
+    transition: 0.4s;
+}
+
+.group-input input:focus {
+    border: solid 2px var(--gold);
+}
+
+.group-input input::placeholder {
+    color: var(--white);
+}
+
+.group-input input:focus::placeholder {
+    color: var(--gold);
+}
+
+.group-buttons {
+    margin-top: 2.5rem;
+    width: 100%;
+    display: grid;
+    justify-content:center;
+}
+
+.group-buttons button {
+    cursor:pointer;
+    display: inline;
+    padding: 1.3rem;
+    width: 20rem;
+    background-color: var(--gold);
+    color: var(--white);
+    border-radius: 10px;
+    border: none;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    transition: 0.4s
+}
+
+.group-buttons button:hover{
+    opacity: 95%;
+    padding-left: 2rem;
+}
+
+/* ========= MY LIST ========= */
+
+#container-table {
+    overflow: auto;
+    background-color: #3333339a;
+    height: 80%;
+    padding-top: 1rem;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#data-table {
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    border-spacing: 0rem  0rem;
+}
+
+.link_add{
+    display: flex;
+    color: #fff;
+    margin-left:3rem;
+    margin-bottom:1rem;
+}
+
+table thead th{
+    background-color: var(--gold);
+    padding: 1.5rem;
+    color: var(--white);
+    text-align: center;
+    font-weight: 400;
+}
+
+table tbody td{
+    padding: 1rem 1rem;
+    font-size: 1rem;
+    color: var(--white);
+    font-weight: 400;
+    text-align: center;
+}
+
+table tbody td img {
+    width: 2.1rem;
+    cursor: pointer;
+}
+
+
+/* ========= MODAL ========= */
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #1a1b1f85;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.4s;
+}
+
+.modal-overlay.active {
+    opacity: 100;
+    visibility: visible;
+}
+
+.modal {
+    background-color: var(--white);
+    border: solid 3px var(--red);
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-modal {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--red);
+    padding-top: 2rem;
+}
+
+.animation {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    width: 15rem;
+}
+
+.group-buttons-modal {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.modal-button {
+    border:none;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 40%;
+    margin-left: 0.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.modal-button.cancel {
+    color: var(--red);
+    background-color: var(--white);
+    border: solid 2px var(--red);
+}
+
+.modal-button.remove {
+    color: var(--white);
+    background-color: var(--red);
+    text-transform: uppercase;
+}
+.modal-button:hover{
+    opacity: 95%;
+    padding-left: 2rem;
+}
+/* ========= RESPONSIVE ========= */
+
+@media (max-width: 800px) {
+    /* ========= GLOBAL ========= */
+        
+    header {
+        padding: 1rem;
+    }
+
+    .img-logo {
+        font-size: 3.5rem;
+    }
+
+    .text-logo {
+        font-size: 1.8rem;
+    }
+
+    /* ========= LOGIN ========= */
+    
+    .container-main {
+        background: #ffffff62;
+        width: 100%;
+    }
+
+    .text-login {
+        font-size: 2.5rem;
+    }
+    
+    .input-group {
+        margin-top: 1rem;
+    }
+    
+    .icon-email {
+        margin-right: 12rem;
+        width: 1.5rem;
+    }
+    .input-group input {
+        width: 15rem;
+        padding: 0.5rem;
+        padding-left: 18%;
+    }
+    .button-login {
+        background: var(--gold);
+        margin-top: 3rem;
+        margin-bottom: 15rem;
+        padding: 0.8rem;
+        width: 15rem;
+        color: var(--white);
+        border-radius: 10px;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+
+    /* ========= HOME ========= */
+
+    .action-buttons {
+        margin-top: -8.5rem;
+    }
+
+    .buttons {
+        padding: 1rem;
+        width: 15rem;
+        font-size: 1rem;
+    }
+
+    /* ========= REGISTER ========= */
+     
+    .container-form form {
+        padding-top: 12rem;
+        width: 90%;
+        height: 170vh;
+        overflow: auto;
+    }
+    .header-form {
+        padding-top: 8.5rem;
+        width: 90%;
+        height: 5%;
+    }
+
+    .header-form a{
+        font-size: 0.8rem;
+    }
+
+    .title-form {
+        font-size: 1.3rem;
+    }
+        
+    .group-input {
+        flex-direction: column;
+    }
+    
+    .group-input input {  
+        width: 15rem;
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    
+    .group-buttons {
+        margin-top: 0.8rem;
+    }
+        
+    .group-buttons button {
+        width: 12rem;
+        font-size: 1rem;
+    }
+
+    
+    /* ========= MODAL ========= */
+        
+    .modal {
+        width: 90%;
+        margin-bottom: 15rem;
+    }
+    
+    .title-modal {
+        font-size: 1rem;
+        text-align: center;
+    }
+        
+    .animation {
+        width: 10rem;
+    }
+    .modal-button {
+        padding: 0.8rem;
+        width: 70%;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 0.5rem;
+        cursor: pointer;
+    }
+    
+
+
+}
+
+
+@media (width: 768px) {
+    /* ========= HOME ========= */
+   main {
+       padding-bottom: 25rem;
+   }
+   
+    /* ========= REGISTER ========= */
+     
+    .container-form form {
+        padding-top: 30rem;
+        height: 200vh;
+        overflow: auto;
+    }
+    
+    .group-input {
+        flex-direction: row;
+    }
+    /* ========= MODAL ========= */
+        
+    .modal {
+        width: 90%;
+        margin-bottom: 25rem;
+    }
+    
+}
+
+@media (width: 1024px) {
+    /* ========= GLOBAL ========= */
+        
+    header {
+        padding: 1rem;
+    }
+
+    .img-logo {
+        font-size: 3.5rem;
+    }
+
+    .text-logo {
+        font-size: 1.8rem;
+    }
+
+
+    /* ========= LOGIN ========= */
+    
+    .container-main {
+        background: #ffffff62;
+        width: 100%;
+    }
+
+    .text-login {
+        font-size: 2.5rem;
+    }
+    
+    .input-group {
+        margin-top: 5rem;
+    }
+    
+    .icon-email {
+        margin-right: 12rem;
+        width: 1.5rem;
+    }
+    .input-group input {
+        width: 15rem;
+        padding: 0.5rem;
+        padding-left: 18%;
+    }
+    .button-login {
+        background: var(--gold);
+        margin-top: 5rem;
+        margin-bottom: 55rem;
+        padding: 0.8rem;
+        width: 15rem;
+        color: var(--white);
+        border-radius: 10px;
+        border: none;
+        font-size: 1.4rem;
+        cursor: pointer;
+    }
+     /* ========= HOME ========= */
+
+     main {
+        padding-bottom: 50rem;
+    }
+    .buttons {
+        padding: 1rem;
+        width: 15rem;
+        font-size: 1rem;
+    }
+    /* ========= REGISTER ========= */
+        
+    .header-form {
+        height: 5%;
+    }
+    .header-form a{
+        font-size: 1rem;
+    }
+
+    .title-form {
+        font-size: 1.5rem;
+    }
+    .group-input input {  
+        width: 20rem;
+    }
+    .group-buttons {
+        margin-top: 0.1rem;
+    }
+
+    .group-buttons button{
+        padding: 1rem;
+    }
+    /* ========= MODAL ========= */
+        
+    .modal {
+        width: 90%;
+        margin-bottom: 55rem;
+    }
+    
+    
+}
+
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://images.emojiterra.com/mozilla/512px/1f393.png" type="image/x-icon">
+    <title>Minha Lista - University</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body class="back-list">
+    <header class="header-my-list">
+        <h1 class="img-logo">🎓</h1>
+        <h1 class="text-logo">UNIVERSITY</h1>
+    </header>
+    <main id="container-table">
+        <a href="../pages/register.html" class="link_add"> + Adicionar University</a>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Curso</th>
+                    <th>Preço</th>
+                    <th>Tipo</th>
+                    <th>Nomenclatura</th>
+                    <th>Duração</th>
+                    <th>Local</th>
+                    <th>Interesse</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    
+    <div class="modal-overlay">
+        <div class="modal">
+            <h2 class="title-modal">Você deseja realmente excluir?</h2>
+            <lottie-player src="../icons/confirm_delete.json" class="animation"  speed="1" autoplay LOOP></lottie-player>
+            <div class="group-buttons-modal">
+                <button class="modal-button cancel" onclick="Modal.closeModal()">Cancelar</button>
+                <button  class="modal-button remove" id="confirmDelete" onclick="isDelete()">Remover</button>
+            </div>
+        </div>
+    </div>
+    <div class="back-box" style="display: none"></div>
+    <div class="container-form" style="display: none">
+        <div class="result-overlay">
+            <form id="form">
+                <div class="header-form">
+                    <a href="../pages/myList.html">VOLTAR</a>
+                    <h2 class="title-form">Editar</h2>
+                    <a href="../pages/register.html">CADASTRAR</a>
+                </div>
+                <div class="group-input">
+                    <div class="group-one">
+                        <input class="input-form" type="text" id="name" placeholder="Nome da faculdade ou universidade">
+                        <input class="input-form" type="text" id="course" placeholder="Curso desejado">
+                        <input class="input-form" type="text"  id="price"  placeholder="Preço">
+                        <input class="input-form" type="text"  id="type" placeholder="Tipo (Graduação, pós-graduação ou etc)">
+                    </div>
+                    <div class="group-two">
+                        <input class="input-form" type="text" clature" id="nomenclature" placeholder="Nomenclatura (Bacharelado, tecnólogo  e etc)">
+                        <input class="input-form" type="text" id="duration" placeholder="Duração">
+                        <input class="input-form" type="text" id="local" placeholder="Localidade">
+                        <input class="input-form" type="number" id="degree" max="10" min="1" placeholder="Grau de interesse (1 a 10)">
+                    </div>
+                </div>
+                <div class="group-buttons edit">
+                    <button id="addUniversity">Salvar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+  
+    
+<script src="../scripts/script.js"></script>
+</body>
+</html>
