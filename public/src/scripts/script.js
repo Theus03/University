@@ -1,41 +1,45 @@
 /* ======== HOME ========*/
 
 // URL
-if (document.location.host != "theus03.github.io") {
-    document.getElementById("linkHome").href = "/index.html";
-} else {
-    document.getElementById("linkHome").href = "/University/";
+if (!document.location.pathname.includes("myList.html")) {
+    if (document.location.host != "theus03.github.io") {
+        document.getElementById("linkHome").href = "/index.html";
+    } else {
+        document.getElementById("linkHome").href = "/University/";
+    }
 }
 
 
 // SLIDER 
+if (document.location.pathname.includes("index") || document.location.pathname.includes("/University/")) {
+    let time = 4000,
+        currentImageWeb = 0,
+        images = document.querySelectorAll(".sliders img")
+        max = images.length;
+    
+        // Função que troca a imagem
+        function nextImage() {
+            images[currentImageWeb].classList.remove("selected")
+    
+            currentImageWeb++
+    
+            if(currentImageWeb >= max)
+                currentImageWeb = 0
+    
+            images[currentImageWeb].classList.add("selected")
+        }
+    
+        // Função para executar o sliders 
+        function startImage() {
+            setInterval(() => {
+                // Troca imagem
+                nextImage();
+            }, time)
+        }
+    
+    window.addEventListener("load", startImage)
+}
 
-let time = 4000,
-    currentImageWeb = 0,
-    images = document.querySelectorAll(".sliders img")
-    max = images.length;
-
-    // Função que troca a imagem
-    function nextImage() {
-        images[currentImageWeb].classList.remove("selected")
-
-        currentImageWeb++
-
-        if(currentImageWeb >= max)
-            currentImageWeb = 0
-
-        images[currentImageWeb].classList.add("selected")
-    }
-
-    // Função para executar o sliders 
-    function startImage() {
-        setInterval(() => {
-            // Troca imagem
-            nextImage();
-        }, time)
-    }
-
-window.addEventListener("load", startImage)
 
 
 /* ======== MY LIST ========*/
@@ -115,6 +119,8 @@ const saveUniversity = () => {
                 updateTableUniversity()
             } else {
                 updateUniversity(index, university)
+                alert('Atualizado com sucesso! ✅')
+                document.location.href = "myList.html";
                 updateTableUniversity()
             }
         }
@@ -129,6 +135,7 @@ const saveUniversity = () => {
 // DOM 
 
 const createRowUniversity = (university, index) => {
+    console.log(university);
     const newRow = document.createElement('tr')
 
     newRow.innerHTML = `
